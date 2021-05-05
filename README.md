@@ -6,3 +6,4 @@
 
 # connect docker-hub to jenkins
 
+# setup credentials on jenkins
