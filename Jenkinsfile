@@ -1,12 +1,6 @@
 node {
     def app
 
-    stage('Initialize')
-        {
-            def dockerHome = tool 'docker-install'
-            def mavenHome  = tool 'mvn-install'
-            env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
-        }
 
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
@@ -25,10 +19,6 @@ node {
         app.inside {
             echo "Tests passed"
         }
-    }
-
-    stage('Deliver') {
-        sh 'bash ./jenkins/deliver.sh'
     }
 
     stage('Push image') {
