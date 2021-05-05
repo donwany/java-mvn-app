@@ -2,8 +2,8 @@ FROM openjdk:8-jre-alpine
 
 EXPOSE 8080
 
-COPY ./target/java-mvn-app-1.0-SNAPSHOT.jar /usr/app/
+COPY ./target/java-docker-jenkins-app.jar /usr/app/
 
 WORKDIR /usr/app
 
-ENTRYPOINT ["java", "-jar", "java-mvn-app-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "java-docker-jenkins-app.jar"]
